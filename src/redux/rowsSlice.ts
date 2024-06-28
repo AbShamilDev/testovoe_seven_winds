@@ -28,7 +28,6 @@ export const deleteRowRequest = createAsyncThunk(
 export const createRowRequest = createAsyncThunk(
   "rowsSlice/createRowRequest",
   async (row: rowForRequestType) => {
-    console.log("create request", row);
     const response = await axios.post(`/outlay-rows/entity/128732/row/create`, row, {
       headers: { "Content-Type": "application/json" },
     });
@@ -79,7 +78,7 @@ const rowsSlice = createSlice({
           else foreachFn(row.child);
         });
       };
-      console.log(action.payload);
+
       action.payload !== 2
         ? foreachFn(state.rows)
         : state.rows.push({
@@ -169,7 +168,7 @@ const rowsSlice = createSlice({
       })
       .addCase(createRowRequest.fulfilled, (state, action) => {
         state.loading = false;
-        console.log(action);
+
         rowsSlice.caseReducers.updateRow(state, {
           payload: { id: 1, row: action.payload.current },
           type: "",
