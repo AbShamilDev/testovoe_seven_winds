@@ -13,18 +13,14 @@ interface newRowType extends Omit<rowType, "id" | "child" | "total"> {
 }
 
 export const fetchRows = createAsyncThunk("rowsSlice/fetchRows", async () => {
-  const response = await axios.get(
-    "http://185.244.172.108:8081/v1/outlay-rows/entity/128732/row/list"
-  );
+  const response = await axios.get("/api/outlay-rows/entity/128732/row/list");
   return response.data;
 });
 
 export const deleteRowRequest = createAsyncThunk(
   "rowsSlice/deleteRowRequest",
   async (rowId: number) => {
-    const response = await axios.delete(
-      `http://185.244.172.108:8081/v1/outlay-rows/entity/128732/row/${rowId}/delete`
-    );
+    const response = await axios.delete(`/api/outlay-rows/entity/128732/row/${rowId}/delete`);
     return response.data;
   }
 );
@@ -33,11 +29,9 @@ export const createRowRequest = createAsyncThunk(
   "rowsSlice/createRowRequest",
   async (row: rowForRequestType) => {
     console.log("create request", row);
-    const response = await axios.post(
-      `http://185.244.172.108:8081/v1/outlay-rows/entity/128732/row/create`,
-      row,
-      { headers: { "Content-Type": "application/json" } }
-    );
+    const response = await axios.post(`/api/outlay-rows/entity/128732/row/create`, row, {
+      headers: { "Content-Type": "application/json" },
+    });
     return response.data;
   }
 );
@@ -45,11 +39,9 @@ export const createRowRequest = createAsyncThunk(
 export const updateRowRequest = createAsyncThunk(
   "rowsSlice/updateRowRequest",
   async ({ rowId, row }: { rowId: number; row: Omit<rowType, "id" | "child" | "total"> }) => {
-    const response = await axios.post(
-      `http://185.244.172.108:8081/v1/outlay-rows/entity/128732/row/${rowId}/update`,
-      row,
-      { headers: { "Content-Type": "application/json" } }
-    );
+    const response = await axios.post(`/api/outlay-rows/entity/128732/row/${rowId}/update`, row, {
+      headers: { "Content-Type": "application/json" },
+    });
     return response.data;
   }
 );
