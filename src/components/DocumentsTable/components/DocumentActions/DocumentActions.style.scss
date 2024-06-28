@@ -1,0 +1,34 @@
+.actions_wrapper {
+  width: 55px;
+  position: relative;
+
+  .actions_container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 7px 2px 2px;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 27.5px;
+    transition: background-color ease 0.2s, width ease 0.2s;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: all;
+
+      &:hover {
+        background: #414144;
+        width: 100%;
+      }
+    }
+  }
+  z-index: 10;
+}
+
+.level_line {
+  position: absolute;
+  width: 13px;
+  bottom: 50%;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
+}

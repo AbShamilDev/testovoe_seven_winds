@@ -1,0 +1,21 @@
+input {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  color: #71717a;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid #414144;
+  border-radius: 6px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    color: #fff;
+  }
+}

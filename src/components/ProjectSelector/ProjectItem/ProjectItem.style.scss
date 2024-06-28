@@ -1,0 +1,20 @@
+.project_item {
+  padding: 5px 20px 5px;
+  align-items: center;
+  gap: 14px;
+  transition: ease 0.2s;
+
+  &:hover {
+    background: #fff2;
+  }
+
+  &.active {
+    background: #a1a1aa;
+  }
+
+  .project_abbr {
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #fff;
+  }
+}

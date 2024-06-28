@@ -1,0 +1,32 @@
+.app_header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid #414144;
+  padding: 0 20px;
+  grid-area: header;
+  gap: 20px;
+
+  .mode_buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    gap: 20px;
+    height: 100%;
+
+    button {
+      display: flex;
+      align-items: center;
+      color: #a1a1aa;
+      height: 100%;
+      font-size: 14px;
+      padding: 4px;
+      line-height: 16.41px;
+
+      &.active {
+        color: #fff;
+        border-bottom: 2px solid #fff;
+      }
+    }
+  }
+}

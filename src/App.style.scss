@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  user-select: none;
+}
+
+.app_header,
+.p_selector_wrapper,
+.table_info_panel {
+  background: #27272a;
+}
+
+button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+
+  > #root {
+    height: 100%;
+  }
+
+  .app {
+    display: grid;
+    grid-template-areas: "header header" "project_selector documents_table";
+    grid-template-rows: 44px 1fr;
+    grid-template-columns: 234px 1fr;
+    height: 100%;
+    width: 100%;
+    background: #202124;
+  }
+}
