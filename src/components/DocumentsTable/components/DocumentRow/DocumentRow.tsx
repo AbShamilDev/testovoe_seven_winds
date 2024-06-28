@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, KeyboardEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import "./DocumentRow.style.scss";
 import { shallowEqual } from "react-redux";
 import { setEditId, setFields } from "src/redux/editSlice";

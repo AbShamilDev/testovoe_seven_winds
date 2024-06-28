@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "src/redux/storeHooks";
 import "./DocumentActions.style.scss";
 import { createRow, deleteRow, deleteRowRequest } from "src/redux/rowsSlice";
-import { clearFields, setEditId, setFields } from "src/redux/editSlice";
+import { clearFields, setEditId } from "src/redux/editSlice";
 import { tableRowProps } from "../../DocumentsTable";
 
 export default function DocumentActions({ row }: { row: tableRowProps }) {
