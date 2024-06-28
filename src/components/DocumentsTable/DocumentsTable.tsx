@@ -50,7 +50,7 @@ export default function DocumentsTable() {
   const createTableRows: (rows: tableRowProps[]) => JSX.Element[] = (rows: tableRowProps[]) => {
     return rows.map((row, i) => (
       <DocumentRow
-        key={`${row.id}${i}${row.level}${row.salary}${row.equipmentCosts}${row.overheads}${row.estimatedProfit}`}
+        key={`${row.id}${i}${row.level}${row.rowName}${row.salary}${row.equipmentCosts}${row.overheads}${row.estimatedProfit}`}
         row={row}
       />
     ));
