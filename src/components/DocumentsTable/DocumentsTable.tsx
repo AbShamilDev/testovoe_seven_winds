@@ -55,11 +55,11 @@ export default function DocumentsTable() {
       />
     ));
   };
-
+  console.log(rows);
   useEffect(() => {
-    rows.length && rows[rows.length - 1].id !== 2
-      ? dispatch(createRow(2))
-      : setRowsElements(createTableRows(toFlatArray(rows)));
+    if (!rows.length) dispatch(createRow(2));
+    else if (rows[rows.length - 1].id !== 2) dispatch(createRow(2));
+    else setRowsElements(createTableRows(toFlatArray(rows)));
   }, [rows]);
 
   return (
