@@ -55,7 +55,7 @@ export default function DocumentsTable() {
       />
     ));
   };
-  console.log(rows);
+
   useEffect(() => {
     if (!rows.length || rows[rows.length - 1].id !== 2) dispatch(createRow(2));
     else setRowsElements(createTableRows(toFlatArray(rows)));
